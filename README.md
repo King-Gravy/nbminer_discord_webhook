@@ -16,6 +16,8 @@ The webhook might get rate limited if you have quite a few devices.
 >tsc --init
 ## Compile from ts to js
 >tsc
+
+If you have issues compiling / reading from the config file go into the tsconfig.json and remove the "//" before "resolveJsonModule": true,
 ## Run
 >node .
 
