@@ -12,7 +12,8 @@ The webhook might get rate limited if you have quite a few devices.
 >npm i -g axios
 ## Install typescript
 >npm i -g typescript
-
+## Init the typescript config
+>tsc --init
 ## Compile from ts to js
 >tsc
 ## Run
