@@ -3,17 +3,17 @@ A simple script that utilizes the built-in NBMINER api and posts data to a disco
 
 The webhook might get rate limited if you have quite a few devices.
 
-## For usage install [node](https://nodejs.org/dist/v16.15.0/node-v16.15.0-x64.msi) with ms, axios, and typescript
-
+## For usage install [node](https://nodejs.org/dist/v16.15.0/node-v16.15.0-x64.msi)
+## Init the project
 >npm init
-
+## Install ms
 >npm i -g ms
-
+## Install axios
 >npm i -g axios
-
+## Install typescript
 >npm i -g typescript
 
-## Compile
+## Compile from ts to js
 >tsc
 ## Run
 >node .
