@@ -15,7 +15,7 @@ The webhook might get rate limited if you have quite a few devices.
 
 ## Compile
 >tsc
-##Run
+## Run
 >node .
 
 
