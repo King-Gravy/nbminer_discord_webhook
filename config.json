@@ -1,0 +1,7 @@
+{
+    "webhook_url": "",
+    "discord_id": "",
+    "api_url": "http://0.0.0.0",
+    "api_port": 22333,
+    "api_endpoint": "/api/v1/status"
+}
