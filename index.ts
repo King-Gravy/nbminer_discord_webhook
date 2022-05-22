@@ -57,23 +57,37 @@
                     let name = key.toString().replace(/_/g, " ")
                     Device_Embed.addField(name.charAt(0).toUpperCase() + name.slice(1), device[key].toString(), true)
                 })
-                await request(webhook_url, "POST", { embeds: [Device_Embed] })
+                request(webhook_url, "POST", { embeds: [Device_Embed] })
             }
 
-            let Stratum_Embed = new Embed()
-            Stratum_Embed.setTitle("Stratum")
-            Stratum_Embed.setColor("BLURPLE")
+            let Miner_Embed = new Embed()
+            Miner_Embed.setTitle("Miner")
+            Miner_Embed.setColor("BLURPLE")
 
             Object.keys(res.miner).forEach(key => {
                 if (key === "devices") [];
                 else {
                     let name = key.toString().replace(/_/g, " ")
-                    Stratum_Embed.addField(name.charAt(0).toUpperCase() + name.slice(1), res.miner[key].toString(), true)
+                    Miner_Embed.addField(name.charAt(0).toUpperCase() + name.slice(1), res.miner[key].toString(), true)
                 }
             })
+            Miner_Embed.addField("Reboots", res.reboot_times.toString(), true)
+            Miner_Embed.addField("Start Time", `<t:${res.start_time}> <t:${res.start_time}:F>`, true)
+            Miner_Embed.addField("Version", res.version.toString(), true)
+
+
+            let Stratum_Embed = new Embed()
+            Stratum_Embed.setTitle("Stratum")
+            Stratum_Embed.setColor("GREEN")
+
+            Object.keys(res.stratum).forEach(key => {
+                let name = key.toString().replace(/_/g, " ")
+                Stratum_Embed.addField(name.charAt(0).toUpperCase() + name.slice(1), res.stratum[key].toString(), true)
+            })
+
             is_rig_offline_bool = false
             is_rig_offline_count = 0
-            await request(webhook_url, "POST", { embeds: [Stratum_Embed] })
+            await request(webhook_url, "POST", { embeds: [Miner_Embed, Stratum_Embed] })
 
         } catch (err) { console.error(err) }
     }
