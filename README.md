@@ -12,6 +12,7 @@ The webhook might get rate limited if you have quite a few devices.
 >npm i -g axios
 ## Install typescript
 >npm i -g typescript
+## Update the config.json with a text editor to add your discord ID and webhook url. If you haven't changed the miner API IP then leave the rest alone.
 ## Init the typescript config
 >tsc --init
 ## Compile from ts to js
