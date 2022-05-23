@@ -25,8 +25,8 @@
                     await axios(request_config)
                     break;
             }
-        } catch (err) { 
-            console.error(err) 
+        } catch (err) {
+            console.error(err)
             return "Error"
         }
     }
@@ -38,7 +38,7 @@
         try {
             let res = await request(`${api_url}:${api_port + api_endpoint}`)
             if (res === "Error") {
-                if (!is_rig_offline_bool){
+                if (!is_rig_offline_bool) {
                     is_rig_offline_count++
                     if (is_rig_offline_count >= 5) {
                         is_rig_offline_bool = true
@@ -47,9 +47,8 @@
                 }
                 return;
             }
-            let devices = res.miner.devices
 
-            for (const device of devices) {
+            for (const device of res.miner.devices) {
                 let Device_Embed = new Embed()
                 Device_Embed.setTitle(device.info)
                 Device_Embed.setColor("GOLD")
@@ -74,7 +73,6 @@
             Miner_Embed.addField("Reboots", res.reboot_times.toString(), true)
             Miner_Embed.addField("Start Time", `<t:${res.start_time}> <t:${res.start_time}:F>`, true)
             Miner_Embed.addField("Version", res.version.toString(), true)
-
 
             let Stratum_Embed = new Embed()
             Stratum_Embed.setTitle("Stratum")
