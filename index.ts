@@ -57,7 +57,7 @@
                     let name = key.toString().replace(/_/g, " ")
                     Device_Embed.addField(name.charAt(0).toUpperCase() + name.slice(1), device[key].toString(), true)
                 })
-                request(webhook_url, "POST", { embeds: [Device_Embed] })
+                await request(webhook_url, "POST", { embeds: [Device_Embed] })
             }
 
             let Miner_Embed = new Embed()
