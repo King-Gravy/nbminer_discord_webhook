@@ -3,5 +3,7 @@
     "discord_id": "",
     "api_url": "http://0.0.0.0",
     "api_port": 22333,
-    "api_endpoint": "/api/v1/status"
+    "api_endpoint": "/api/v1/status",
+    "notify_lower_than_hashrate": false,
+    "notify_lower_than_hashrate_number": 0
 }
