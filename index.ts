@@ -4,7 +4,9 @@
     const axios = require('axios')
     const {
         webhook_url, api_url, api_port,
-        api_endpoint, discord_id
+        api_endpoint, discord_id,
+        notify_lower_than_hashrate,
+        notify_lower_than_hashrate_number
     } = require("./config.json");
 
     const { Embed } = require('./embed')
@@ -86,6 +88,11 @@
             is_rig_offline_bool = false
             is_rig_offline_count = 0
             await request(webhook_url, "POST", { embeds: [Miner_Embed, Stratum_Embed] })
+            if(notify_lower_than_hashrate){
+                if(Number(res.miner.total_hashrate.replace(/[A-Z]/g, "")) < Number(notify_lower_than_hashrate_number)) {
+                    await request(webhook_url, "POST", { content: `<@${discord_id}>, The current hashrate \`${res.miner.total_hashrate.toString()}\` is below the set threshold \`${notify_lower_than_hashrate_number} M\``})
+                }
+            }
 
         } catch (err) { console.error(err) }
     }
