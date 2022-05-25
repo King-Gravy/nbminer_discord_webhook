@@ -23,4 +23,4 @@ If you have issues compiling / reading from the config file go into the tsconfig
 >node .
 
 
-![Example embeds](https://media.discordapp.net/attachments/760299890516426764/978073199990423622/unknown.png?width=452&height=723)
+![Example embeds](https://cdn.discordapp.com/attachments/760299890516426764/979146528377679942/unknown.png)
